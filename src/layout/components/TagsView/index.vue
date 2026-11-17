@@ -358,9 +358,9 @@ onMounted(() => {
   width: 100%;
   height: $tags-view-height;
   background-color: var(--app-tags-bg);
-  backdrop-filter: blur(16px);
   border-top: 1px solid var(--app-border-color);
   border-bottom: 1px solid var(--app-border-color);
+  backdrop-filter: blur(16px);
 
   .tags-item {
     display: inline-flex;

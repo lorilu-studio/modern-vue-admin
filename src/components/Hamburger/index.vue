@@ -55,8 +55,8 @@ function toggleClick() {
 
 .hamburger {
   vertical-align: middle;
-  transition: transform var(--app-motion-base);
   transform: scaleX(-1);
+  transition: transform var(--app-motion-base);
 }
 
 .hamburger.is-active {
