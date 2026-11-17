@@ -48,9 +48,9 @@ const accounts = {
 } as const;
 
 export function getDemoAccount(role?: string) {
-  return accounts[role as DemoRole] ?? accounts.admin;
+  return accounts[role as DemoRole] ?? accounts.viewer;
 }
 
 export function getDemoRole(role?: string): DemoRole {
-  return role && role in accounts ? (role as DemoRole) : "admin";
+  return role && role in accounts ? (role as DemoRole) : "viewer";
 }

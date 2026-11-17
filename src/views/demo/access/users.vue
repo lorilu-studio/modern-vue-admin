@@ -208,7 +208,13 @@
       </template>
       <template #footer>
         <el-button @click="detailVisible = false">关闭</el-button>
-        <el-button type="primary" @click="editFromDetail">编辑资料</el-button>
+        <el-button
+          v-if="hasAuth('sys:user:edit')"
+          type="primary"
+          @click="editFromDetail"
+        >
+          编辑资料
+        </el-button>
       </template>
     </el-dialog>
 
@@ -297,8 +303,9 @@ import SearchPanel from "@/components/SearchPanel/index.vue";
 import StatusTag from "@/components/StatusTag/index.vue";
 import TableToolbar from "@/components/TableToolbar/index.vue";
 import { isInDateRange, paginate } from "@/utils/list-data";
+import { hasAuth } from "@/plugins/permission";
 
-defineOptions({ name: "TemplateList" });
+defineOptions({ name: "UserManagement" });
 
 type UserStatus = "enabled" | "disabled";
 interface UserRow {
@@ -468,10 +475,12 @@ function asUser(row: unknown) {
   return row as UserRow;
 }
 function openCreateDialog() {
+  if (!hasAuth("sys:user:add")) return;
   resetForm();
   formVisible.value = true;
 }
 function openEditDialog(user: UserRow) {
+  if (!hasAuth("sys:user:edit")) return;
   editingUser.value = user;
   Object.assign(form, {
     name: user.name,
@@ -496,6 +505,7 @@ function editFromDetail() {
 }
 
 async function saveUser() {
+  if (!hasAuth(editingUser.value ? "sys:user:edit" : "sys:user:add")) return;
   if (!(await formRef.value?.validate().catch(() => false))) return;
   saving.value = true;
   window.setTimeout(() => {
@@ -538,6 +548,7 @@ async function confirmAction(
     .catch(() => false);
 }
 async function toggleStatus(user: UserRow) {
+  if (!hasAuth("sys:user:edit")) return;
   const enabled = user.status !== "enabled";
   if (
     !(await confirmAction(
@@ -551,6 +562,7 @@ async function toggleStatus(user: UserRow) {
   ElMessage.success(`用户已${enabled ? "启用" : "停用"}`);
 }
 async function disableSelected() {
+  if (!hasAuth("sys:user:edit")) return;
   const enabledUsers = selectedRows.value.filter(
     (user) => user.status === "enabled"
   );
@@ -567,6 +579,7 @@ async function disableSelected() {
   ElMessage.success("已停用选中用户");
 }
 async function removeUser(user: UserRow) {
+  if (!hasAuth("sys:user:delete")) return;
   if (
     !(await confirmAction(
       `删除“${user.name}”后无法恢复，确定继续吗？`,

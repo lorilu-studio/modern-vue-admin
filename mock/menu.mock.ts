@@ -3,7 +3,7 @@ import { getDemoRole } from "./demo-account";
 
 const userMenu = {
   path: "users",
-  component: "demo/templates/list",
+  component: "demo/access/users",
   name: "UserManagement",
   meta: {
     title: "用户管理",
