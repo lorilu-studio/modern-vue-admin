@@ -2,15 +2,19 @@
   <section class="app-main" :style="{ minHeight: minHeight }">
     <router-view>
       <template #default="{ Component, route }">
-        <component :is="Component" :key="route.fullPath" />
+        <KeepAlive :include="cachedViews">
+          <component :is="Component" :key="route.fullPath" />
+        </KeepAlive>
       </template>
     </router-view>
   </section>
 </template>
 
 <script setup lang="ts">
-import { useSettingsStore } from "@/store";
+import { useSettingsStore, useTagsViewStore } from "@/store";
 import variables from "@/styles/variables.module.scss";
+
+const { cachedViews } = storeToRefs(useTagsViewStore());
 
 const minHeight = computed(() => {
   if (useSettingsStore().tagsView) {

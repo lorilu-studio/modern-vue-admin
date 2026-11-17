@@ -8,7 +8,11 @@
         <AppIcon name="download" />
         导出周报
       </el-button>
-      <el-button type="primary" @click="router.push('/access/users')">
+      <el-button
+        v-if="router.hasRoute('UserManagement')"
+        type="primary"
+        @click="router.push('/access/users')"
+      >
         <AppIcon name="plus" />
         管理用户
       </el-button>
@@ -36,7 +40,11 @@
             <h2>本周处理进度</h2>
             <p>各业务模块的计划完成情况</p>
           </div>
-          <el-button text @click="router.push('/access/roles')">
+          <el-button
+            v-if="router.hasRoute('RoleManagement')"
+            text
+            @click="router.push('/access/roles')"
+          >
             查看明细
             <AppIcon name="arrow-right" />
           </el-button>
@@ -92,7 +100,11 @@
             <h2>最新动态</h2>
             <p>团队近期的关键操作记录</p>
           </div>
-          <el-button text @click="router.push('/audit/operations')">
+          <el-button
+            v-if="router.hasRoute('OperationLog')"
+            text
+            @click="router.push('/audit/operations')"
+          >
             全部动态
           </el-button>
         </div>
@@ -126,7 +138,7 @@
         </div>
         <div class="quick-grid">
           <button
-            v-for="item in shortcuts"
+            v-for="item in availableShortcuts"
             :key="item.label"
             type="button"
             @click="router.push(item.path)"
@@ -227,11 +239,34 @@ const activities = [
   },
 ];
 const shortcuts = [
-  { label: "用户管理", path: "/access/users", icon: "user" },
-  { label: "角色管理", path: "/access/roles", icon: "lock" },
-  { label: "操作日志", path: "/audit/operations", icon: "document" },
-  { label: "我的资料", path: "/profile/index", icon: "user-round" },
+  {
+    label: "用户管理",
+    path: "/access/users",
+    icon: "user",
+    route: "UserManagement",
+  },
+  {
+    label: "角色管理",
+    path: "/access/roles",
+    icon: "lock",
+    route: "RoleManagement",
+  },
+  {
+    label: "操作日志",
+    path: "/audit/operations",
+    icon: "document",
+    route: "OperationLog",
+  },
+  {
+    label: "我的资料",
+    path: "/profile/index",
+    icon: "user-round",
+    route: "ProfileCenter",
+  },
 ];
+const availableShortcuts = computed(() =>
+  shortcuts.filter((item) => router.hasRoute(item.route))
+);
 </script>
 
 <style scoped lang="scss">
