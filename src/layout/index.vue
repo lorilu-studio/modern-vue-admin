@@ -150,7 +150,7 @@ watch(route, () => {
     z-index: 9;
     background: var(--app-navbar-bg);
     backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--app-border-color);
+    box-shadow: inset 0 -1px var(--app-border-color);
     transition: width var(--app-motion-base);
   }
 }
