@@ -64,10 +64,10 @@ defineProps({
   .logo-title {
     flex-shrink: 0; /* 防止容器在空间不足时缩小 */
     overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 15px;
     font-weight: 650;
     color: var(--app-sidebar-text-strong);
-    text-overflow: ellipsis;
     white-space: nowrap;
   }
 
