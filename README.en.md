@@ -2,30 +2,22 @@
 
 [简体中文](./README.md) | English
 
-`modern-vue-admin` is a Chinese-first Vue 3 admin starter built with TypeScript, Vite, Pinia, and Element Plus. It includes local mocks, dynamic menus, permission boundaries, dashboard layouts, and CRUD interaction examples.
+A Vue 3, TypeScript, Vite, Pinia and Element Plus admin template with dynamic menus, permission examples, layouts, themes, tabs, local mocks and CRUD examples.
 
-Version: `1.0.0`. See [CHANGELOG.md](./CHANGELOG.md).
-
-## Scope
-
-- Start a new business admin application from a maintained UI and engineering baseline.
-- Reuse the interaction patterns for access control, audit, and profile pages.
-- Create a new repository with GitHub's **Use this template** action.
-
-This repository is not an npm package and does not include a production backend, persistent data storage, or server-side authorization. A hosted demo is not available yet; the local Mock mode runs the complete interface.
+Version 1.0.0. Licensed under [Apache-2.0](./LICENSE). This is an application template, not an npm library. Demo data lives in page memory; production APIs and authorization must be supplied by your backend.
 
 ## Quick start
 
 Requires Node.js 18.18+ and npm 9+.
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-Open the URL printed by Vite, normally `http://localhost:3000`. The Mock account is `admin` / `123456`.
+Open the Vite URL, normally `http://localhost:3000`. The development mock uses `admin` / `123456`. Mock login does not validate passwords and must not be deployed as a public authentication service.
 
-## Quality checks
+## Checks
 
 ```bash
 npm run check:config
@@ -37,10 +29,4 @@ npm test
 npm run build
 ```
 
-## Real API integration
-
-The management pages use local Mock data. Create typed API modules under `src/api/`, keep permission codes stable, and replace in-page arrays with API calls. The backend must enforce authorization for every read and write operation; frontend visibility checks are only UX.
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md), [SECURITY.md](./SECURITY.md), and the [MIT License](./LICENSE).
-
-For the user-management contract and static hosting requirements, see [API integration](./docs/API_INTEGRATION.md) and [deployment](./docs/DEPLOYMENT.md).
+See the [getting started guide](./docs/01-getting-started.md), [API integration](./docs/02-api-integration.md), [deployment](./docs/03-deployment.md), [security reporting](./docs/04-security.md), [contributing guide](./docs/05-contributing.md), [changelog](./docs/06-changelog.md), and [customization guide](./docs/07-customization.md). Detailed guides are currently in Chinese.

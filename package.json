@@ -82,7 +82,7 @@
     "vitest": "^2.1.9",
     "vue-tsc": "^2.0.29"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "engines": {
     "node": ">=18.18.0",
     "npm": ">=9"
