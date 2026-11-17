@@ -80,7 +80,7 @@
     "vite-plugin-mock-dev-server": "^1.7.1",
     "vite-plugin-vue-devtools": "^7.3.8",
     "vitest": "^2.1.9",
-    "vue-tsc": "^2.0.29"
+    "vue-tsc": "^3.3.14"
   },
   "license": "Apache-2.0",
   "engines": {
