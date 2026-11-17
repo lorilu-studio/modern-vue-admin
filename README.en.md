@@ -29,4 +29,4 @@ npm test
 npm run build
 ```
 
-See the [getting started guide](./docs/01-getting-started.md), [API integration](./docs/02-api-integration.md), [deployment](./docs/03-deployment.md), [security reporting](./docs/04-security.md), [contributing guide](./docs/05-contributing.md), [changelog](./docs/06-changelog.md), and [customization guide](./docs/07-customization.md). Detailed guides are currently in Chinese.
+See the [getting started guide](./docs/01-getting-started.md), [API integration](./docs/02-api-integration.md), [deployment](./docs/03-deployment.md), [security reporting](./docs/04-security.md), [contributing guide](./docs/05-contributing.md), [changelog](./docs/06-changelog.md), [customization guide](./docs/07-customization.md), [roadmap](./docs/08-roadmap.md), and [code of conduct](./docs/09-code-of-conduct.md). Detailed guides are currently in Chinese.
