@@ -176,6 +176,10 @@ watch(route, () => {
       height: $navbar-height;
     }
 
+    :deep(.el-scrollbar__bar) {
+      display: none;
+    }
+
     :deep(.el-menu-item),
     :deep(.el-sub-menu__title),
     :deep(.el-menu--horizontal) {
