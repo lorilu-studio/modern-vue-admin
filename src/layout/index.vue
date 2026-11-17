@@ -88,6 +88,7 @@ const classObj = computed(() => ({
   openSidebar: appStore.sidebar.opened,
   mobile: appStore.device === DeviceEnum.MOBILE,
   [`layout-${settingsStore.layout}`]: true,
+  [`content-width-${settingsStore.contentWidth}`]: true,
 }));
 
 watchEffect(() => {
@@ -118,6 +119,18 @@ watch(route, () => {
 </script>
 
 <style lang="scss" scoped>
+.layout-shell {
+  --app-content-max-width: 100%;
+
+  &.content-width-default {
+    --app-content-max-width: 1200px;
+  }
+
+  &.content-width-wide {
+    --app-content-max-width: 1440px;
+  }
+}
+
 .sidebar-container {
   position: fixed;
   top: 0;
@@ -168,6 +181,7 @@ watch(route, () => {
     display: flex;
     width: 100% !important;
     height: $navbar-height;
+    padding-inline: max(0px, calc((100% - var(--app-content-max-width)) / 2));
     border-right: 0;
     border-bottom: 1px solid var(--app-border-color);
 
