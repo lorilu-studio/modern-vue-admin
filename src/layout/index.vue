@@ -162,8 +162,8 @@ watch(route, () => {
     top: 0;
     z-index: 9;
     background: var(--app-navbar-bg);
-    backdrop-filter: blur(16px);
     box-shadow: inset 0 -1px var(--app-border-color);
+    backdrop-filter: blur(16px);
     transition: width var(--app-motion-base);
   }
 }
