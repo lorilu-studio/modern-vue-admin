@@ -147,8 +147,14 @@ export function setupRouter(app: App<Element>) {
 /**
  * 重置路由
  */
+const removeDynamicRoutes: Array<() => void> = [];
+
+export function addDynamicRoute(route: RouteRecordRaw) {
+  removeDynamicRoutes.push(router.addRoute(route));
+}
+
 export function resetRouter() {
-  router.replace({ path: "/login" });
+  removeDynamicRoutes.splice(0).forEach((remove) => remove());
 }
 
 export default router;

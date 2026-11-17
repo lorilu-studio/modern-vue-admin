@@ -6,7 +6,7 @@ import {
 
 import NProgress from "@/utils/nprogress";
 import { TOKEN_KEY } from "@/enums/CacheEnum";
-import router from "@/router";
+import router, { addDynamicRoute } from "@/router";
 import { usePermissionStore, useUserStore } from "@/store";
 
 export function setupPermission() {
@@ -46,7 +46,7 @@ export function setupPermission() {
             await userStore.getUserInfo();
             const dynamicRoutes = await permissionStore.generateRoutes();
             dynamicRoutes.forEach((route: RouteRecordRaw) =>
-              router.addRoute(route)
+              addDynamicRoute(route)
             );
             next({ ...to, replace: true });
           } catch (error) {

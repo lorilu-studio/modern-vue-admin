@@ -44,32 +44,41 @@ service.interceptors.response.use(
       return data;
     }
 
-    ElMessage.error(msg || "系统出错");
+    if (code === ResultEnum.TOKEN_INVALID) {
+      expireSession();
+    } else {
+      ElMessage.error(msg || "系统出错");
+    }
     return Promise.reject(new Error(msg || "Error"));
   },
   (error: unknown) => {
     if (axios.isAxiosError(error) && error.response?.data) {
       const { code, msg } = error.response.data;
       if (code === ResultEnum.TOKEN_INVALID) {
-        ElNotification({
-          title: "提示",
-          message: "您的会话已过期，请重新登录",
-          type: "info",
-        });
-        useUserStoreHook()
-          .resetToken()
-          .then(() => {
-            location.reload();
-          });
+        expireSession();
       } else {
         ElMessage.error(msg || "系统出错");
       }
-    } else {
+    } else if (!axios.isCancel(error)) {
       ElMessage.error("网络连接异常，请稍后重试");
     }
     return Promise.reject(error);
   }
 );
+
+let sessionExpiring = false;
+function expireSession() {
+  if (sessionExpiring) return;
+  sessionExpiring = true;
+  ElNotification({
+    title: "提示",
+    message: "您的会话已过期，请重新登录",
+    type: "info",
+  });
+  void useUserStoreHook()
+    .resetToken()
+    .then(() => location.reload());
+}
 
 // 导出 axios 实例
 export default service;

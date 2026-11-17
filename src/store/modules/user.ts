@@ -53,28 +53,20 @@ export const useUserStore = defineStore("user", () => {
   }
 
   // user logout
-  function logout() {
-    return new Promise<void>((resolve, reject) => {
-      AuthAPI.logout()
-        .then(() => {
-          localStorage.removeItem(TOKEN_KEY);
-          location.reload(); // 清空路由
-          resolve();
-        })
-        .catch((error) => {
-          reject(error);
-        });
-    });
+  async function logout() {
+    try {
+      await AuthAPI.logout();
+    } finally {
+      await resetToken();
+      location.reload();
+    }
   }
 
-  // remove token
   function resetToken() {
-    return new Promise<void>((resolve) => {
-      localStorage.removeItem(TOKEN_KEY);
-      user.value = { roles: [], perms: [] };
-      resetRouter();
-      resolve();
-    });
+    localStorage.removeItem(TOKEN_KEY);
+    user.value = { roles: [], perms: [] };
+    resetRouter();
+    return Promise.resolve();
   }
 
   return {
