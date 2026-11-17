@@ -13,6 +13,7 @@ const defaultSettings: AppSettings = {
   fixedHeader: true,
   sidebarLogo: true,
   layout: LayoutEnum.LEFT,
+  contentWidth: "full",
   theme: ThemeEnum.AUTO,
   size: SizeEnum.DEFAULT,
   language: LanguageEnum.ZH_CN,

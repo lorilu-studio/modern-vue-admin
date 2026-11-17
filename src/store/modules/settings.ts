@@ -26,6 +26,10 @@ export const useSettingsStore = defineStore("setting", () => {
   );
   // 布局
   const layout = useStorage<string>("layout", defaultSettings.layout);
+  const contentWidth = useStorage<AppSettings["contentWidth"]>(
+    "contentWidth",
+    defaultSettings.contentWidth
+  );
   // 水印
   const watermarkEnabled = useStorage<boolean>(
     "watermarkEnabled",
@@ -64,6 +68,7 @@ export const useSettingsStore = defineStore("setting", () => {
     tagsView,
     sidebarLogo,
     layout,
+    contentWidth,
     watermarkEnabled,
   };
 
@@ -96,6 +101,7 @@ export const useSettingsStore = defineStore("setting", () => {
     fixedHeader,
     sidebarLogo,
     layout,
+    contentWidth,
     themeColor,
     theme,
     isDark,

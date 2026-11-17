@@ -33,6 +33,14 @@
         v-model="settingsStore.layout"
         @update:model-value="changeLayout"
       />
+      <div class="setting-item setting-item--stack">
+        <span>内容宽度</span>
+        <el-radio-group v-model="settingsStore.contentWidth">
+          <el-radio-button value="full">全宽</el-radio-button>
+          <el-radio-button value="wide">1440px</el-radio-button>
+          <el-radio-button value="default">1200px</el-radio-button>
+        </el-radio-group>
+      </div>
       <div class="setting-item">
         <span>多页签</span>
         <el-switch v-model="settingsStore.tagsView" />

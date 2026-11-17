@@ -66,6 +66,8 @@ declare global {
     sidebarLogo: boolean;
     /** 导航栏布局(left|top|mix) */
     layout: string;
+    /** 主区域内容宽度(default|wide|full) */
+    contentWidth: "default" | "wide" | "full";
     /** 主题颜色 */
     themeColor: string;
     /** 主题模式(dark|light|auto) */
