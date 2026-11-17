@@ -1,0 +1,108 @@
+:root,
+html[data-theme="light"] {
+  color-scheme: light;
+
+  --app-bg-page: #f4f6f8;
+  --app-bg-surface: #fff;
+  --app-bg-elevated: #fff;
+  --app-bg-hover: #f7f8fa;
+  --app-bg-muted: #eef1f5;
+  --app-text-primary: #1d2433;
+  --app-text-secondary: #667085;
+  --app-text-placeholder: #98a2b3;
+  --app-border-color: #e6e9ef;
+  --app-border-color-strong: #d7dce5;
+  --app-primary: #315efb;
+  --app-primary-hover: #244ee8;
+  --app-primary-soft: #edf2ff;
+  --app-success: #17a673;
+  --app-success-soft: #eaf8f3;
+  --app-warning: #dc8b18;
+  --app-warning-soft: #fff7e8;
+  --app-danger: #d92d20;
+  --app-danger-soft: #fff0ee;
+  --app-info: #4776e6;
+  --app-info-soft: #eef4ff;
+  --app-sidebar-bg: #fff;
+  --app-sidebar-text: #4b5565;
+  --app-sidebar-text-strong: #1d2433;
+  --app-sidebar-hover-bg: #eef2f7;
+  --app-sidebar-active-bg: #edf2ff;
+  --app-navbar-bg: rgb(255 255 255 / 92%);
+  --app-tags-bg: rgb(255 255 255 / 88%);
+  --app-mask: rgb(15 23 42 / 38%);
+  --app-focus-ring: 0 0 0 3px rgb(49 94 251 / 18%);
+  --app-shadow-popup: 0 10px 32px rgb(16 24 40 / 12%);
+  --app-shadow-dialog: 0 24px 64px rgb(16 24 40 / 18%);
+  --app-radius-control: 8px;
+  --app-radius-card: 12px;
+  --app-radius-dialog: 14px;
+  --app-sidebar-width: 240px;
+  --app-sidebar-width-collapsed: 68px;
+  --app-navbar-height: 56px;
+  --app-tags-view-height: 38px;
+  --app-space-page: 24px;
+  --app-motion-fast: 160ms;
+  --app-motion-base: 220ms;
+  --app-font-family:
+    -apple-system, blinkmacsystemfont, "Segoe UI", "PingFang SC",
+    "Microsoft YaHei", sans-serif;
+  --app-font-mono: "SFMono-Regular", consolas, "Liberation Mono", monospace;
+}
+
+html.dark,
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  --app-bg-page: #0f1115;
+  --app-bg-surface: #181b21;
+  --app-bg-elevated: #20242c;
+  --app-bg-hover: #242933;
+  --app-bg-muted: #252a33;
+  --app-text-primary: #f2f4f7;
+  --app-text-secondary: #98a2b3;
+  --app-text-placeholder: #667085;
+  --app-border-color: rgb(255 255 255 / 9%);
+  --app-border-color-strong: rgb(255 255 255 / 16%);
+  --app-primary: #6c8cff;
+  --app-primary-hover: #86a0ff;
+  --app-primary-soft: rgb(108 140 255 / 15%);
+  --app-success: #4ac69c;
+  --app-success-soft: rgb(74 198 156 / 14%);
+  --app-warning: #efad4e;
+  --app-warning-soft: rgb(239 173 78 / 14%);
+  --app-danger: #f97066;
+  --app-danger-soft: rgb(249 112 102 / 14%);
+  --app-info: #82a1ff;
+  --app-info-soft: rgb(130 161 255 / 14%);
+  --app-sidebar-bg: #15181e;
+  --app-sidebar-text: #98a2b3;
+  --app-sidebar-text-strong: #f2f4f7;
+  --app-sidebar-hover-bg: #20242c;
+  --app-sidebar-active-bg: rgb(108 140 255 / 15%);
+  --app-navbar-bg: rgb(24 27 33 / 92%);
+  --app-tags-bg: rgb(24 27 33 / 88%);
+  --app-mask: rgb(0 0 0 / 56%);
+  --app-focus-ring: 0 0 0 3px rgb(108 140 255 / 24%);
+  --app-shadow-popup: 0 12px 36px rgb(0 0 0 / 36%);
+  --app-shadow-dialog: 0 28px 72px rgb(0 0 0 / 48%);
+}
+
+@media (width < 1200px) {
+  :root {
+    --app-space-page: 20px;
+  }
+}
+
+@media (width < 768px) {
+  :root {
+    --app-space-page: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --app-motion-fast: 0ms;
+    --app-motion-base: 0ms;
+  }
+}

@@ -1,0 +1,35 @@
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+  $colors: (
+    "primary": (
+      "base": #315efb,
+    ),
+    "success": (
+      "base": #17a673,
+    ),
+    "warning": (
+      "base": #dc8b18,
+    ),
+    "danger": (
+      "base": #d92d20,
+    ),
+    "info": (
+      "base": #4776e6,
+    ),
+  ),
+
+  $bg-color: (
+    "page": #f4f6f8,
+  )
+);
+
+/** 全局SCSS变量 */
+$menu-background: var(--app-sidebar-bg);
+$menu-text: var(--app-sidebar-text);
+$menu-active-text: var(--app-primary);
+$menu-hover: var(--app-sidebar-hover-bg);
+$sidebar-logo-background: var(--app-sidebar-bg);
+
+$sidebar-width: var(--app-sidebar-width);
+$sidebar-width-collapsed: var(--app-sidebar-width-collapsed);
+$navbar-height: var(--app-navbar-height);
+$tags-view-height: var(--app-tags-view-height);

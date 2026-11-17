@@ -1,0 +1,116 @@
+:root {
+  --el-color-primary: var(--app-primary);
+  --el-color-success: var(--app-success);
+  --el-color-warning: var(--app-warning);
+  --el-color-danger: var(--app-danger);
+  --el-color-info: var(--app-info);
+  --el-bg-color: var(--app-bg-surface);
+  --el-bg-color-page: var(--app-bg-page);
+  --el-bg-color-overlay: var(--app-bg-elevated);
+  --el-fill-color-blank: var(--app-bg-surface);
+  --el-fill-color-light: var(--app-bg-hover);
+  --el-fill-color-lighter: var(--app-bg-muted);
+  --el-text-color-primary: var(--app-text-primary);
+  --el-text-color-regular: var(--app-text-secondary);
+  --el-text-color-secondary: var(--app-text-secondary);
+  --el-text-color-placeholder: var(--app-text-placeholder);
+  --el-border-color: var(--app-border-color);
+  --el-border-color-light: var(--app-border-color);
+  --el-border-color-lighter: var(--app-border-color);
+  --el-border-radius-base: var(--app-radius-control);
+  --el-border-radius-small: 6px;
+  --el-box-shadow-light: var(--app-shadow-popup);
+  --el-box-shadow: var(--app-shadow-popup);
+}
+
+.el-button,
+.el-input__wrapper,
+.el-select__wrapper,
+.el-textarea__inner,
+.el-date-editor.el-input__wrapper {
+  transition:
+    border-color var(--app-motion-fast),
+    box-shadow var(--app-motion-fast),
+    background-color var(--app-motion-fast),
+    color var(--app-motion-fast);
+}
+
+.el-button {
+  font-weight: 550;
+}
+
+.el-button:focus-visible,
+.el-input__wrapper.is-focus,
+.el-select__wrapper.is-focused,
+.el-textarea__inner:focus {
+  box-shadow: var(--app-focus-ring);
+}
+
+.el-card {
+  border-color: var(--app-border-color);
+  border-radius: var(--app-radius-card);
+  box-shadow: none;
+}
+
+.el-card__header {
+  border-bottom-color: var(--app-border-color);
+}
+
+.el-menu {
+  --el-menu-bg-color: var(--app-sidebar-bg);
+  --el-menu-text-color: var(--app-sidebar-text);
+  --el-menu-hover-text-color: var(--app-sidebar-text-strong);
+  --el-menu-hover-bg-color: var(--app-sidebar-hover-bg);
+  --el-menu-active-color: var(--app-primary);
+}
+
+.el-menu-item:not(.is-active):hover,
+.el-sub-menu__title:hover {
+  color: var(--app-sidebar-text-strong) !important;
+  background-color: var(--app-sidebar-hover-bg) !important;
+}
+
+.el-menu-item.is-active:hover {
+  color: var(--app-primary) !important;
+  background-color: var(--app-sidebar-active-bg) !important;
+}
+
+.el-table {
+  --el-table-border-color: var(--app-border-color);
+  --el-table-header-bg-color: var(--app-bg-hover);
+  --el-table-row-hover-bg-color: var(--app-primary-soft);
+  --el-table-current-row-bg-color: var(--app-primary-soft);
+  --el-table-tr-bg-color: var(--app-bg-surface);
+  --el-table-bg-color: var(--app-bg-surface);
+  --el-table-fixed-box-shadow: 6px 0 16px -12px rgb(16 24 40 / 42%);
+
+  font-variant-numeric: tabular-nums;
+}
+
+.el-table th.el-table__cell {
+  font-weight: 600;
+  color: var(--app-text-secondary);
+}
+
+.el-dialog,
+.el-message-box {
+  border-radius: var(--app-radius-dialog);
+  box-shadow: var(--app-shadow-dialog);
+}
+
+.el-drawer {
+  background: var(--app-bg-elevated);
+}
+
+.el-dropdown__popper,
+.el-select__popper,
+.el-picker__popper,
+.el-popover.el-popper {
+  border-color: var(--app-border-color);
+  box-shadow: var(--app-shadow-popup);
+}
+
+.el-tag {
+  font-weight: 500;
+  border-radius: 6px;
+}

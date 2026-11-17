@@ -1,0 +1,41 @@
+@use "./tokens";
+@use "./reset";
+@use "./element-plus";
+
+.app-container {
+  min-height: 100%;
+  padding: var(--app-space-page);
+}
+
+.search-container {
+  padding: 20px 20px 2px;
+  margin-bottom: 16px;
+  background-color: var(--app-bg-surface);
+  border: 1px solid var(--app-border-color);
+  border-radius: var(--app-radius-card);
+}
+
+.table-container > .el-card__header {
+  padding: calc(var(--el-card-padding) - 8px) var(--el-card-padding);
+}
+
+.link-type,
+.link-type:focus {
+  color: var(--app-primary);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--app-primary-hover);
+  }
+}
+
+.app-card {
+  background: var(--app-bg-surface);
+  border: 1px solid var(--app-border-color);
+  border-radius: var(--app-radius-card);
+}
+
+::selection {
+  color: var(--app-text-primary);
+  background: var(--app-primary-soft);
+}

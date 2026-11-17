@@ -1,0 +1,14 @@
+dist
+node_modules
+public
+.husky
+.vscode
+.idea
+*.sh
+
+src/assets
+stats.html
+package-lock.json
+.eslintrc-auto-import.json
+src/types/auto-imports.d.ts
+src/types/components.d.ts
